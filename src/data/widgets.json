@@ -1,0 +1,113 @@
+{
+  "categories": [
+    {
+      "id": "cspm",
+      "name": "CSPM Executive Dashboard",
+      "widgets": [
+        {
+          "id": "cspm-1",
+          "name": "Cloud Security Posture",
+          "content": "Overall cloud security posture is 85% compliant with best practices."
+        },
+        {
+          "id": "cspm-2",
+          "name": "High-Risk Assets",
+          "content": "5 high-risk assets identified in the last 24 hours."
+        },
+        {
+          "id": "cspm-3",
+          "name": "Compliance Status",
+          "content": "92% of assets are compliant with regulatory requirements."
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Network Security Overview",
+      "widgets": [
+        {
+          "id": "network-1",
+          "name": "Firewall Status",
+          "content": "All firewalls are operating normally. Last updated: 2 hours ago."
+        },
+        {
+          "id": "network-2",
+          "name": "Intrusion Attempts",
+          "content": "3 intrusion attempts blocked in the last hour."
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Identity and Access Management",
+      "widgets": [
+        {
+          "id": "identity-1",
+          "name": "Active Users",
+          "content": "1,245 active users in the last 24 hours."
+        },
+        {
+          "id": "identity-2",
+          "name": "Failed Login Attempts",
+          "content": "17 failed login attempts detected. 2 accounts locked."
+        }
+      ]
+    }
+  ],
+  "allWidgets": [
+    {
+      "id": "cspm-1",
+      "name": "Cloud Security Posture",
+      "content": "Overall cloud security posture is 85% compliant with best practices.",
+      "category": "cspm"
+    },
+    {
+      "id": "cspm-2",
+      "name": "High-Risk Assets",
+      "content": "5 high-risk assets identified in the last 24 hours.",
+      "category": "cspm"
+    },
+    {
+      "id": "cspm-3",
+      "name": "Compliance Status",
+      "content": "92% of assets are compliant with regulatory requirements.",
+      "category": "cspm"
+    },
+    {
+      "id": "network-1",
+      "name": "Firewall Status",
+      "content": "All firewalls are operating normally. Last updated: 2 hours ago.",
+      "category": "network"
+    },
+    {
+      "id": "network-2",
+      "name": "Intrusion Attempts",
+      "content": "3 intrusion attempts blocked in the last hour.",
+      "category": "network"
+    },
+    {
+      "id": "identity-1",
+      "name": "Active Users",
+      "content": "1,245 active users in the last 24 hours.",
+      "category": "identity"
+    },
+    {
+      "id": "identity-2",
+      "name": "Failed Login Attempts",
+      "content": "17 failed login attempts detected. 2 accounts locked.",
+      "category": "identity"
+    },
+    {
+      "id": "data-1",
+      "name": "Data Encryption Status",
+      "content": "98% of sensitive data is encrypted at rest and in transit.",
+      "category": null
+    },
+    {
+      "id": "threat-1",
+      "name": "Threat Intelligence",
+      "content": "2 new potential threats identified. Analysis in progress.",
+      "category": null
+    }
+  ]
+}
