@@ -1,3 +1,6 @@
+
+**Live**: https://dashboard-pe54.onrender.com/
+
 Follow these steps to set up the project locally:
 
 1. **Clone the repository:**
@@ -13,3 +16,6 @@ Follow these steps to set up the project locally:
 3. **Run the application:**
    ```bash
    npm run dev
+
+**Tech Stack Used**:
+> Context API, React, Tailwind
