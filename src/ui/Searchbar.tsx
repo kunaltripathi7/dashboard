@@ -1,6 +1,5 @@
 import { Search } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useWidgets } from "../context/WidgetContext";
 import SearchResultItems from "./SearchResultItems";
 
 type Props = {
@@ -14,8 +13,6 @@ function SearchBar({ placeholder }: Props) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
-
-  const handleSearch = () => {};
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent): void {
