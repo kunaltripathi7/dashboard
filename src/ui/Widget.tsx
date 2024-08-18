@@ -11,8 +11,13 @@ type Props =
   | { widget?: never; category: CategoryType };
 
 function Widget({ widget, category }: Props) {
-  const { handleRemoveWidget, handleAddWidget, isModalOpen, onCloseModal } =
-    useWidgets();
+  const {
+    handleRemoveWidget,
+    handleAddWidget,
+    isModalOpen,
+    onCloseModal,
+    onOpenModal,
+  } = useWidgets();
 
   const [selectedCategory, setSelectedCategory] = useState<CategoryType | null>(
     null
@@ -21,13 +26,13 @@ function Widget({ widget, category }: Props) {
   function handleClick() {
     if (!widget) {
       setSelectedCategory(category!);
-      onCloseModal();
+      onOpenModal();
     } else handleRemoveWidget(widget);
   }
 
   function handleSave(category: CategoryType, name: string, content: string) {
-    if (!category) return;
     handleAddWidget(createWidget(category, name, content));
+    onCloseModal();
   }
 
   return (
@@ -55,7 +60,7 @@ function Widget({ widget, category }: Props) {
             onClick={handleClick}
           >
             <Plus />
-            <span className="">Add widget</span>
+            <span>Add widget</span>
           </button>
         </div>
       )}

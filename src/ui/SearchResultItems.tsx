@@ -13,7 +13,10 @@ function SearchResultItems({ query }: Props) {
       {widgets.map((widget) => {
         if (widget.name.toLowerCase().startsWith(query))
           return (
-            <li className="cursor-pointer px-2 py-1 text-md flex items-center gap-4">
+            <li
+              className="cursor-pointer px-2 py-1 text-md flex items-center gap-4"
+              key={widget.id}
+            >
               <MdWidgets />
               {widget.name}
             </li>

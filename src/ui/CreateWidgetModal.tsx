@@ -11,7 +11,6 @@ type Props = {
 const CreateWidgetModal = ({ isOpen, onClose, onSave, category }: Props) => {
   const [name, setName] = useState<string>("");
   const [content, setContent] = useState<string>("");
-  console.log(category);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +21,7 @@ const CreateWidgetModal = ({ isOpen, onClose, onSave, category }: Props) => {
     onClose();
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !category) return null;
 
   return (
     <div className="fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-40">
@@ -73,6 +72,7 @@ const CreateWidgetModal = ({ isOpen, onClose, onSave, category }: Props) => {
             <button
               type="submit"
               className="px-5 py-2 bg-blue-700 text-white rounded-md hover:bg-[#14147D] focus:outline-none focus:ring-2 focus:ring-[#14147D ] transition duration-150 ease-in-out"
+              onClick={handleSubmit}
             >
               Save
             </button>

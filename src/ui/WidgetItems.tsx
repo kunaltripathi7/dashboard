@@ -1,14 +1,13 @@
 import { Plus } from "lucide-react";
 import { useWidgets } from "../context/WidgetContext";
 import WidgetItem from "./WidgetItem";
-import CreateWidgetModal from "./CreateWidgetModal";
 
 type Props = {
   activeIndex: number;
 };
 
 function WidgetItems({ activeIndex }: Props) {
-  const { categories, isModalOpen, onCloseModal } = useWidgets();
+  const { categories, onOpenModal } = useWidgets();
 
   return (
     <>
@@ -20,7 +19,7 @@ function WidgetItems({ activeIndex }: Props) {
         </ul>
         <button
           className="items-center bg-[#14147D] text-white px-2 py-1 rounded-md mt-4 flex gap-1 text-sm"
-          onClick={() => onCloseModal()}
+          onClick={() => onOpenModal()}
         >
           <span>Add</span>
           <Plus className="h-4 w-4" />

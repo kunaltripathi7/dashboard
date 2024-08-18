@@ -12,6 +12,7 @@ interface WidgetContextType {
   handleAddWidget: (widget: CategoryWidget) => void;
   handleRemoveWidget: (widget: CategoryWidget) => void;
   onCloseModal: () => void;
+  onOpenModal: () => void;
 }
 
 // Create the context with an undefined default value
@@ -66,7 +67,10 @@ function WidgetProvider({ children }: { children: React.ReactNode }) {
   }
 
   function onCloseModal() {
-    setModalOpen((prev) => !prev);
+    setModalOpen(false);
+  }
+  function onOpenModal() {
+    setModalOpen(true);
   }
 
   return (
@@ -80,6 +84,7 @@ function WidgetProvider({ children }: { children: React.ReactNode }) {
         handleAddWidget,
         handleRemoveWidget,
         onCloseModal,
+        onOpenModal,
       }}
     >
       {children}
