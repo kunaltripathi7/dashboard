@@ -1,11 +1,17 @@
+import { useWidgets } from "./context/WidgetContext";
+
 import Header from "./ui/Header";
 import MainDashboard from "./ui/MainDashboard";
 
+import SidebarWidget from "./ui/SidebarWidget";
+
 function App() {
+  const { handleSidebar, isSidebarOpen } = useWidgets();
   return (
-    <div>
+    <div className="min-h-screen flex flex-col relative cursor-default">
       <Header />
-      <MainDashboard />
+      <MainDashboard onOpen={handleSidebar} />
+      {isSidebarOpen && <SidebarWidget onClose={handleSidebar} />}
     </div>
   );
 }

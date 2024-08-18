@@ -13,11 +13,6 @@
           "id": "cspm-2",
           "name": "High-Risk Assets",
           "content": "5 high-risk assets identified in the last 24 hours."
-        },
-        {
-          "id": "cspm-3",
-          "name": "Compliance Status",
-          "content": "92% of assets are compliant with regulatory requirements."
         }
       ]
     },
@@ -52,6 +47,22 @@
           "content": "17 failed login attempts detected. 2 accounts locked."
         }
       ]
+    },
+    {
+      "id": "data",
+      "name": "Data Security",
+      "widgets": [
+        {
+          "id": "data-1",
+          "name": "Data Encryption Status",
+          "content": "98% of sensitive data is encrypted at rest and in transit."
+        },
+        {
+          "id": "data-2",
+          "name": "Data Access Logs",
+          "content": "15 high-privilege data access events in the last hour."
+        }
+      ]
     }
   ],
   "allWidgets": [
@@ -65,12 +76,6 @@
       "id": "cspm-2",
       "name": "High-Risk Assets",
       "content": "5 high-risk assets identified in the last 24 hours.",
-      "category": "cspm"
-    },
-    {
-      "id": "cspm-3",
-      "name": "Compliance Status",
-      "content": "92% of assets are compliant with regulatory requirements.",
       "category": "cspm"
     },
     {
@@ -101,13 +106,13 @@
       "id": "data-1",
       "name": "Data Encryption Status",
       "content": "98% of sensitive data is encrypted at rest and in transit.",
-      "category": null
+      "category": "data"
     },
     {
-      "id": "threat-1",
-      "name": "Threat Intelligence",
-      "content": "2 new potential threats identified. Analysis in progress.",
-      "category": null
+      "id": "data-2",
+      "name": "Data Access Logs",
+      "content": "15 high-privilege data access events in the last hour.",
+      "category": "data"
     }
   ]
 }

@@ -1,12 +1,22 @@
 import { ChevronDown, EllipsisVertical, RefreshCw, Tally1 } from "lucide-react";
 import { GoClockFill } from "react-icons/go";
 
-function DashboardHeader() {
+type Props = {
+  onOpen: () => void;
+};
+
+function DashboardHeader({ onOpen }: Props) {
   return (
-    <div className="flex justify-between py-10">
-      <h1 className="font-bold text-2xl">CNAPP Dashboard</h1>
-      <div className="text-gray-700 text-xs flex gap-4 mt-6">
-        <button className="bg-white px-2 rounded-md py-2">Add Widget +</button>
+    <div className="flex justify-between py-6 items-center">
+      <h1 className="font-bold text-xl mx-3">CNAPP Dashboard</h1>
+      <div className="text-gray-500 flex gap-4 mt-6">
+        <button
+          className="bg-white px-2 rounded-md py-2 font-semibold flex gap-3 text-[13px]"
+          onClick={onOpen}
+        >
+          <span>Add Widget</span>
+          <span>+</span>
+        </button>
         <button className="bg-white px-2 py-1 rounded-md">
           <RefreshCw className="h-6 w-4" />
         </button>
