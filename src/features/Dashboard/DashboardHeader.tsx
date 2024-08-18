@@ -1,10 +1,4 @@
-import {
-  ChevronDown,
-  EllipsisVertical,
-  Plus,
-  RefreshCw,
-  Tally1,
-} from "lucide-react";
+import { ChevronDown, EllipsisVertical, RefreshCw, Tally1 } from "lucide-react";
 import { GoClockFill } from "react-icons/go";
 import { IoIosAddCircle } from "react-icons/io";
 
