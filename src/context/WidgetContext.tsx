@@ -1,6 +1,11 @@
 import { createContext, useContext, useState } from "react";
 import widgetsData from "../data/widgets.json";
-import { CategoriesType, CategoryWidget, WidgetsType } from "../types";
+import {
+  CategoriesType,
+  CategoryType,
+  CategoryWidget,
+  WidgetsType,
+} from "../types";
 
 // Define the shape of your context
 interface WidgetContextType {
@@ -13,6 +18,8 @@ interface WidgetContextType {
   handleRemoveWidget: (widget: CategoryWidget) => void;
   onCloseModal: () => void;
   onOpenModal: () => void;
+  selectedCategory: CategoryType | null;
+  setSelectedCategory: (ctg: CategoryType) => void;
 }
 
 // Create the context with an undefined default value
@@ -28,6 +35,10 @@ function WidgetProvider({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+
+  const [selectedCategory, setSelectedCategory] = useState<CategoryType | null>(
+    null
+  );
 
   function handleSidebar() {
     setIsSidebarOpen((prev) => !prev);
@@ -85,6 +96,8 @@ function WidgetProvider({ children }: { children: React.ReactNode }) {
         handleRemoveWidget,
         onCloseModal,
         onOpenModal,
+        selectedCategory,
+        setSelectedCategory,
       }}
     >
       {children}

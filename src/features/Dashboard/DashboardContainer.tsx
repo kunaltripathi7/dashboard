@@ -1,4 +1,4 @@
-import { CategoryType } from "../types";
+import { CategoryType } from "../../types";
 import Widget from "./Widget";
 type Props = {
   category: CategoryType;
@@ -7,10 +7,10 @@ type Props = {
 function DashboardContainer({ category }: Props) {
   return (
     <div className="flex flex-col gap-2 relative">
-      <h2 className="text-lg font-bold absolute left-5 top-[-15px]">
+      <h2 className="text-lg font-bold absolute sm:left-5 top-[-15px] left-20">
         {category.name}
       </h2>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center sm:justify-normal">
         {category.widgets.map((wgt) => (
           <Widget widget={wgt} key={wgt.id} />
         ))}

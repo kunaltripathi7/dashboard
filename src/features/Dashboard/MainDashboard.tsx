@@ -1,5 +1,5 @@
-import { useWidgets } from "../context/WidgetContext";
-import { CategoryType } from "../types";
+import { useWidgets } from "../../context/WidgetContext";
+import { CategoryType } from "../../types";
 import DashboardContainer from "./DashboardContainer";
 import DashboardHeader from "./DashboardHeader";
 type Props = {

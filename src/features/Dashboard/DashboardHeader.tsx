@@ -1,5 +1,12 @@
-import { ChevronDown, EllipsisVertical, RefreshCw, Tally1 } from "lucide-react";
+import {
+  ChevronDown,
+  EllipsisVertical,
+  Plus,
+  RefreshCw,
+  Tally1,
+} from "lucide-react";
 import { GoClockFill } from "react-icons/go";
+import { IoIosAddCircle } from "react-icons/io";
 
 type Props = {
   onOpen: () => void;
@@ -8,8 +15,16 @@ type Props = {
 function DashboardHeader({ onOpen }: Props) {
   return (
     <div className="flex justify-between py-6 items-center">
-      <h1 className="font-bold text-xl mx-3">CNAPP Dashboard</h1>
-      <div className="text-gray-500 flex gap-4 mt-6">
+      <h1 className="font-bold sm:text-xl sm:mx-3 mx-28 text-lg">
+        CNAPP Dashboard
+      </h1>
+      <button
+        className="sm:hidden text-blue-950 text-2xl mr-4"
+        onClick={onOpen}
+      >
+        <IoIosAddCircle />
+      </button>
+      <div className="text-gray-500 hidden gap-4 mt-6 sm:flex">
         <button
           className="bg-white px-2 rounded-md py-2 font-semibold flex gap-3 text-[13px]"
           onClick={onOpen}
@@ -17,7 +32,7 @@ function DashboardHeader({ onOpen }: Props) {
           <span>Add Widget</span>
           <span>+</span>
         </button>
-        <button className="bg-white px-2 py-1 rounded-md">
+        <button className="bg-white px-2 py-1 rounded-md ">
           <RefreshCw className="h-6 w-4" />
         </button>
         <button className="bg-white px-2 py-1 rounded-md">

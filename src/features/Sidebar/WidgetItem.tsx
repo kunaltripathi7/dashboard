@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CategoryWidget } from "../types";
-import { useWidgets } from "../context/WidgetContext";
+import { CategoryWidget } from "../../types";
+import { useWidgets } from "../../context/WidgetContext";
 
 type Props = {
   widget: CategoryWidget;

@@ -1,10 +1,7 @@
 import { RxCross2 } from "react-icons/rx";
-import { CategoryType, CategoryWidget } from "../types";
+import { CategoryType, CategoryWidget } from "../../types";
 import { Plus } from "lucide-react";
-import { useWidgets } from "../context/WidgetContext";
-import { createWidget } from "../utils/widget";
-import CreateWidgetModal from "./CreateWidgetModal";
-import { useState } from "react";
+import { useWidgets } from "../../context/WidgetContext";
 
 type Props =
   | { widget: CategoryWidget; category?: never }
@@ -13,15 +10,10 @@ type Props =
 function Widget({ widget, category }: Props) {
   const {
     handleRemoveWidget,
-    handleAddWidget,
-    isModalOpen,
-    onCloseModal,
-    onOpenModal,
-  } = useWidgets();
 
-  const [selectedCategory, setSelectedCategory] = useState<CategoryType | null>(
-    null
-  );
+    onOpenModal,
+    setSelectedCategory,
+  } = useWidgets();
 
   function handleClick() {
     if (!widget) {
@@ -30,13 +22,8 @@ function Widget({ widget, category }: Props) {
     } else handleRemoveWidget(widget);
   }
 
-  function handleSave(category: CategoryType, name: string, content: string) {
-    handleAddWidget(createWidget(category, name, content));
-    onCloseModal();
-  }
-
   return (
-    <div className="bg-[#F0F0F5] basis-1/3 rounded-3xl px-6 pt-4 pb-12 my-0.5">
+    <div className="bg-[#F0F0F5] basis-1/3 rounded-3xl px-6 pt-4 pb-12 my-0.5 min-w-[245px]">
       {widget ? (
         <div className="rounded-lg shadow-md p-4 group bg-white h-52">
           <div className="flex justify-between mb-6 font-bold">
@@ -63,14 +50,6 @@ function Widget({ widget, category }: Props) {
             <span>Add widget</span>
           </button>
         </div>
-      )}
-      {isModalOpen && (
-        <CreateWidgetModal
-          isOpen={isModalOpen}
-          onClose={onCloseModal}
-          onSave={handleSave}
-          category={selectedCategory}
-        />
       )}
     </div>
   );

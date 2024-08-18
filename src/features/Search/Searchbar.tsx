@@ -31,14 +31,14 @@ function SearchBar({ placeholder }: Props) {
   }, [searchBarRef]);
 
   return (
-    <div className="flex justify-end grow-[3]">
+    <div className="flex justify-end grow-[3] ">
       <form className="relative" ref={searchBarRef}>
         <input
           type="text"
           value={query}
           onChange={handleInputChange}
           placeholder={placeholder || "Search..."}
-          className={`w-28 rounded-md bg-[#F0F5FA] pl-10 py-1 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-blue-400  sm:w-[30rem] sm:focus:w-[32rem] ring-blue-200 ring-1 text-gray-600 focus:bg-white ${
+          className={`w-52 rounded-md bg-[#F0F5FA] pl-10 py-1 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-blue-400  sm:w-[20rem] sm:focus:w-[22rem] ring-blue-200 ring-1 text-gray-600 focus:bg-white ${
             query && "focus:rounded-b-none"
           }`}
         />

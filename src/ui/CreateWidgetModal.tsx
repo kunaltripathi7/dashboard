@@ -1,31 +1,32 @@
 import { useState } from "react";
 import { CategoryType } from "../types";
+import { useWidgets } from "../context/WidgetContext";
 
 type Props = {
   isOpen: boolean;
   onSave: (category: CategoryType, name: string, content: string) => void;
   onClose: () => void;
-  category: CategoryType | null;
 };
 
-const CreateWidgetModal = ({ isOpen, onClose, onSave, category }: Props) => {
+const CreateWidgetModal = ({ isOpen, onClose, onSave }: Props) => {
   const [name, setName] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const { selectedCategory } = useWidgets();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!category) return;
-    onSave(category, name, content);
+    if (!selectedCategory) return;
+    onSave(selectedCategory, name, content);
     setName("");
     setContent("");
     onClose();
   };
 
-  if (!isOpen || !category) return null;
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-40">
-      <div className="bg-white p-8 rounded-lg w-full max-w-lg shadow-xl transform transition-all duration-300">
+      <div className="bg-white p-8 rounded-lg w-full max-w-xs sm:max-w-lg shadow-xl transform transition-all duration-300">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Add New Widget
         </h2>
@@ -58,7 +59,7 @@ const CreateWidgetModal = ({ isOpen, onClose, onSave, category }: Props) => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               required
-              className="w-full h-32 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14147D] focus:border-[#14147D] transition duration-150 ease-in-out resize-none"
+              className="w-full h-15 sm:h-32 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14147D] focus:border-[#14147D] transition duration-150 ease-in-out resize-none"
             />
           </div>
           <div className="flex justify-end space-x-3">

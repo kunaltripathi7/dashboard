@@ -1,4 +1,4 @@
-import { useWidgets } from "../context/WidgetContext";
+import { useWidgets } from "../../context/WidgetContext";
 import { MdWidgets } from "react-icons/md";
 
 type Props = {

@@ -1,10 +1,10 @@
 import Navigation from "./Navigation";
-import Searchbar from "./Searchbar";
+import Searchbar from "../features/Search/Searchbar";
 import UserConfig from "./UserConfig";
 
 function Header() {
   return (
-    <header className="flex px-6 pt-3 pb-1.5 items-center">
+    <header className="flex sm:px-6 pt-3 pb-1.5 items-center">
       <Navigation />
       <Searchbar placeholder={"Search widgets..."} />
       <UserConfig />
