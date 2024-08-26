@@ -19,3 +19,7 @@ Follow these steps to set up the project locally:
 
 **Tech Stack Used**:
 > Context API, React, Tailwind
+
+
+**Features**:
+> Dynamically add, remove & search widgets.
